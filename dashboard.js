@@ -25,7 +25,6 @@
   const titles = {
     overview: 'Overview',
     system: 'System Status',
-    sites: 'Global Network',
     reports: 'Reports',
     gallery: 'Gallery',
     news: 'News',
