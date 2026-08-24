@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STACKLY · Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <style>
+        /* ═══════════════════════════════════════════════════
+               GLOBAL RESET & THEME VARIABLES
+               ═══════════════════════════════════════════════════ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #84D4B5;
+            --color-primary-dark: #61B175;
+            --color-primary-light: rgba(168, 230, 207, 0.2);
+            --color-primary-glow: rgba(168, 230, 207, 0.25);
+            --color-bg: #FFFFFF;
+            --color-bg-card: rgba(255, 255, 255, 0.9);
+            --color-surface: #F8FAFC;
+            --color-white: #000000; /* Inverted for light theme */
+            --color-real-white: #FFFFFF;
+            --color-text: #1E293B;
+            --color-text-muted: #718096;
+            --color-border: rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 60px rgba(168, 230, 207, 0.08);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --tr: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            background: var(--color-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            position: relative;
+            overflow-x: hidden;
+            color: var(--color-text);
+        }
+
+        /* ── Container ── */
+        .login-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 440px;
+        }
+
+        /* ── Top‑Left Home Link ── */
+        .home-link {
+            position: fixed;
+            top: 28px;
+            left: 28px;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px 10px 14px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.10);
+            border-radius: 40px;
+            color: rgba(0, 0, 0, 0.85);
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--tr);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            letter-spacing: 0.3px;
+        }
+        .home-link i {
+            font-size: 18px;
+            color: var(--color-primary);
+            transition: var(--tr);
+        }
+        .home-link .code-bracket {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            color: var(--color-primary);
+            font-weight: 800;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .home-link:hover {
+            background: rgba(168, 230, 207, 0.15);
+            border-color: rgba(168, 230, 207, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            color: var(--color-text);
+        }
+        .home-link:hover i {
+            transform: scale(1.1);
+        }
+        .home-link:hover .code-bracket {
+            opacity: 1;
+        }
+
+        /* ── Brand Header ── */
+        .brand-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .brand-header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--color-text);
+            letter-spacing: -0.5px;
+        }
+        .brand-header p {
+            color: var(--color-text-muted);
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        /* ── Form Card ── */
+        .form-card {
+            background: var(--color-bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 36px 32px 32px;
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+            transition: var(--tr);
+        }
+        .form-card:hover {
+            border-color: rgba(168, 230, 207, 0.2);
+        }
+
+        /* ── Form Fields ── */
+        .form-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .field-group label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-text);
+            letter-spacing: 0.3px;
+        }
+        .field-group label .required {
+            color: var(--color-primary);
+            margin-left: 2px;
+        }
+
+        .input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .input-wrap>i {
+            position: absolute;
+            left: 14px;
+            font-size: 18px;
+            color: var(--color-text-muted);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .input-wrap input,
+        .input-wrap select {
+            width: 100%;
+            padding: 13px 44px 13px 44px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            color: var(--color-text);
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            transition: var(--tr);
+            outline: none;
+        }
+        .input-wrap select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+        }
+        .input-wrap select option {
+            background: var(--color-bg);
+            color: var(--color-text);
+        }
+        .input-wrap input:focus,
+        .input-wrap select:focus {
+            border-color: var(--color-primary);
+            background: rgba(168, 230, 207, 0.05);
+            box-shadow: 0 0 0 3px var(--color-primary-glow);
+        }
+        .input-wrap input::placeholder {
+            color: var(--color-text-muted);
+            font-weight: 400;
+        }
+
+        /* ── Password Toggle ── */
+        .toggle-pw {
+            position: absolute;
+            right: 12px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-text-muted);
+            font-size: 18px;
+            padding: 4px;
+            transition: var(--tr);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .toggle-pw:hover {
+            color: var(--color-primary);
+        }
+
+        /* ── Hide browser's built-in password reveal icon ── */
+        input[type="password"]::-ms-reveal,
+        input[type="password"]::-ms-clear {
+            display: none;
+        }
+
+        /* ── Form Meta ── */
+        .form-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 2px 0 4px;
+        }
+        .remember-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--color-text-muted);
+            cursor: pointer;
+        }
+        .remember-label input[type="checkbox"] {
+            accent-color: var(--color-primary);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+        .forgot-link {
+            font-size: 13px;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            transition: var(--tr);
+        }
+        .forgot-link:hover {
+            color: var(--color-primary);
+        }
+
+        /* ── Error Message ── */
+        .error-message {
+            background: rgba(239, 68, 68, 0.12);
+            color: #ef4444;
+            padding: 12px 16px;
+            font-size: 13px;
+            border-radius: var(--radius-sm);
+            display: none;
+            border-left: 3px solid #ef4444;
+        }
+        .error-message.show {
+            display: block;
+        }
+
+        /* ── Submit Button ── */
+        .btn-submit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px;
+            border: none;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: var(--color-real-white);
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: var(--tr);
+            width: 100%;
+            box-shadow: 0 4px 24px rgba(168, 230, 207, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+        .btn-submit:hover::before {
+            transform: translateX(100%);
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(168, 230, 207, 0.4);
+        }
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        /* ── Divider ── */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--color-text-muted);
+            font-size: 12px;
+            font-weight: 500;
+            margin: 6px 0 2px;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--color-border);
+        }
+
+        /* ── Social Buttons ── */
+        .social-btns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 6px;
+            border: 1px solid var(--color-border);
+            background: var(--color-surface);
+            color: var(--color-text-muted);
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: var(--tr);
+        }
+        .social-btn i {
+            font-size: 18px;
+        }
+        .social-btn:hover {
+            border-color: var(--color-primary);
+            background: rgba(168, 230, 207, 0.05);
+            color: var(--color-text);
+        }
+
+        /* ── Footer Link ── */
+        .form-footer {
+            text-align: center;
+            margin-top: 24px;
+            color: var(--color-text-muted);
+            font-size: 14px;
+        }
+        .form-footer a {
+            color: var(--color-primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--tr);
+        }
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .form-card {
+                padding: 28px 18px 24px;
+            }
+            .brand-header h1 {
+                font-size: 24px;
+            }
+            .social-btns {
+                grid-template-columns: 1fr;
+            }
+            .form-meta {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
+            body {
+                padding: 80px 16px 24px;
+                align-items: flex-start;
+            }
+            .home-link {
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                padding: 8px 14px 8px 10px;
+                font-size: 12px;
+            }
+            .home-link i {
+                font-size: 15px;
+            }
+            .home-link .code-bracket {
+                font-size: 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .btn-submit::before {
+                display: none;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════
+               SPINNER KEYFRAMES
+               ═══════════════════════════════════════════════════ */
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .spinner {
+            display: inline-block;
+            animation: spin 0.7s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── HOME LINK (Top‑Left) ── -->
+    <a href="index.html" class="home-link">
+        <span>Home</span>
+    </a>
+
+    <div class="login-container">
+
+        <!-- Brand -->
+        <div class="brand-header">
+            <h1>Welcome Back</h1>
+            <p>Sign in to your STACKLY account</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="form-card">
+
+            <form class="form-fields" id="loginForm" novalidate>
+
+                <!-- Username -->
+                <div class="field-group">
+                    <label for="username">Username <span class="required">*</span></label>
+                    <div class="input-wrap">
+                        <i class="ph ph-user-circle"></i>
+                        <input type="text" id="username" placeholder="Enter your username" required />
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="field-group">
+                    <label for="email">Email address <span class="required">*</span></label>
+                    <div class="input-wrap">
+                        <i class="ph ph-envelope"></i>
+                        <input type="email" id="email" placeholder="you@stackly.com" required />
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="field-group">
+                    <label for="password">Password <span class="required">*</span></label>
+                    <div class="input-wrap">
+                        <i class="ph ph-lock-key"></i>
+                        <input type="password" id="password" placeholder="Enter your password" required />
+                        <button type="button" class="toggle-pw" id="togglePw" aria-label="Toggle password visibility">
+                            <i class="ph ph-eye" id="pwIcon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Role -->
+                <div class="field-group">
+                    <label for="roleSelect">Account role <span class="required">*</span></label>
+                    <div class="input-wrap">
+                        <i class="ph ph-briefcase"></i>
+                        <select id="roleSelect" required>
+                            <option value="">Select role</option>
+                            <option value="viewer">Customer – View DevOps dashboard</option>
+                            <option value="admin">Admin – Full grid management access</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Meta -->
+                <div class="form-meta">
+                    <label class="remember-label">
+                        <input type="checkbox" id="remember" />
+                        Remember me
+                    </label>
+                    <a href="404.html" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <!-- Error -->
+                <div class="error-message" id="formError"></div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-submit" id="signinBtn">
+                    <span>Sign In</span>
+                    <i class="ph ph-arrow-right"></i>
+                </button>
+
+                <!-- Divider -->
+                <div class="divider"><span>or continue with</span></div>
+
+                <!-- Social -->
+                <div class="social-btns">
+                    <a href="404.html" class="social-btn"><i class="ph ph-google-logo"></i> Google</a>
+                    <a href="404.html" class="social-btn"><i class="ph ph-github-logo"></i> GitHub</a>
+                    <a href="404.html" class="social-btn"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+                </div>
+
+            </form>
+
+            <!-- Footer -->
+            <p class="form-footer">
+                New to STACKLY? <a href="signup.html">Create account</a>
+            </p>
+
+        </div>
+    </div>
+
+    <script>
+        // ═══════════════════════════════════════════════════
+        // LOGIN SCRIPT
+        // ═══════════════════════════════════════════════════
+
+        (function() {
+            'use strict';
+
+            // ── DOM refs ──
+            const form = document.getElementById('loginForm');
+            const usernameInput = document.getElementById('username');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const roleSelect = document.getElementById('roleSelect');
+            const rememberCheck = document.getElementById('remember');
+            const togglePwBtn = document.getElementById('togglePw');
+            const pwIcon = document.getElementById('pwIcon');
+            const errorEl = document.getElementById('formError');
+            const submitBtn = document.getElementById('signinBtn');
+
+            // ── Toggle password visibility ──
+            togglePwBtn.addEventListener('click', function() {
+                const isText = passwordInput.type === 'text';
+                passwordInput.type = isText ? 'password' : 'text';
+                pwIcon.className = isText ? 'ph ph-eye' : 'ph ph-eye-slash';
+            });
+
+            // ── Show error helper ──
+            function showError(msg) {
+                errorEl.textContent = msg;
+                errorEl.classList.add('show');
+                submitBtn.innerHTML = '<span>Sign In</span><i class="ph ph-arrow-right"></i>';
+            }
+
+            function clearError() {
+                errorEl.classList.remove('show');
+                errorEl.textContent = '';
+            }
+
+            // ── Clear form on back navigation ──
+            window.addEventListener('pageshow', function(e) {
+                if (e.persisted || (window.performance && window.performance.navigation.type === 2)) {
+                    form.reset();
+                    clearError();
+                    submitBtn.innerHTML = '<span>Sign In</span><i class="ph ph-arrow-right"></i>';
+                }
+            });
+
+            // ── Submit handler ──
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                clearError();
+
+                const username = usernameInput.value.trim();
+                const email = emailInput.value.trim();
+                const password = passwordInput.value;
+                const role = roleSelect.value;
+                const remember = rememberCheck.checked;
+
+                // Validation
+                if (!username) return showError('Username is required');
+                if (!email) return showError('Email address is required');
+                if (!email.includes('@') || !email.includes('.')) return showError('Enter a valid email address');
+                if (!password) return showError('Password is required');
+                if (!role) return showError('Please select an account role');
+
+                // Save user
+                localStorage.setItem('stackly_user', JSON.stringify({
+                    email: email,
+                    username: username,
+                    role: role,
+                    remember: remember
+                }));
+
+                // Spinner
+                submitBtn.innerHTML = '<i class="ph ph-circle-notch spinner"></i> Signing in…';
+
+                // Redirect after delay
+                setTimeout(function() {
+                    window.location.href = role === 'admin' ? 'admin.html' : 'dashboard.html';
+                }, 900);
+            });
+
+            // ── Enter key navigation (focus next, submit on last) ──
+            const inputs = Array.from(document.querySelectorAll('.input-wrap input, .input-wrap select'));
+            inputs.forEach(function(field, idx) {
+                field.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const next = inputs[idx + 1];
+                        if (next) next.focus();
+                        else form.dispatchEvent(new Event('submit'));
+                    }
+                });
+            });
+
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | STACKLY</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+    <!-- Premium Oval Header (Shared) -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="logo-removebg-preview.webp" alt="STACKLY" class="nav-logo-img" />
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a href="login.html" class="btn btn-login">Login</a>
+                <button class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="mobile-login-btn">Login</a></li>
+        </ul>
+    </div>
+
+    <main>
+    <section class="shared-hero">
+        <video class="shared-hero-video" autoplay muted loop playsinline preload="auto" poster="images/wind_detail.webp">
+            <source src="vi1.mp4" type="video/mp4">
+        </video>
+        <i class="fa-solid fa-infinity floating-leaf leaf-1"></i>
+        <i class="fa-solid fa-server floating-leaf leaf-2"></i>
+        <i class="fa-solid fa-gears floating-leaf leaf-3"></i>
+        
+        <div class="shared-hero-content">
+            <h1 class="split-text">Automating the Future of Cloud & Operations</h1>
+            <p class="fade-up" style="transition-delay: 0.2s;">We are dedicated to building highly scalable, reliable, and secure cloud environments by delivering cutting-edge DevOps and CI/CD solutions globally.</p>
+            <div class="breadcrumbs fade-up" style="transition-delay: 0.3s;">
+                <a href="index.html">Home</a> &nbsp;/&nbsp; <span>About Us</span>
+            </div>
+        </div>
+
+        <div class="hero-curve">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 2. Our Story -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image-wrapper fade-up">
+                    <img src="pic9.webp" alt="Pioneers in Cloud Automation" class="about-hero-img moving-img">
+                    <div class="experience-badge float-anim">
+                        <span class="num">15+</span>
+                        <span class="text">Years<br>Experience</span>
+                    </div>
+                </div>
+
+                <div class="story-right fade-up">
+                    <span class="about-label">Our Story</span>
+                    <h2 style="font-size: 40px; margin-bottom: 20px;">Pioneers in Cloud Automation Infrastructure</h2>
+                    <p style="color: #6B7280; margin-bottom: 20px;">Founded on the principle that scalable, reliable infrastructure is the backbone of modern software, Stackly has evolved from a small collective of cloud engineers into a global leader in DevOps automation. We don't just provision servers; we automate the future.</p>
+                    
+                    <ul class="story-features">
+                        <li><i class="fa-solid fa-check-circle"></i> Continuous Delivery Pipelines</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Dynamic Multi-Cloud Architectures</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Infrastructure as Code Blueprinting</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Continuous Observability & Monitoring</li>
+                    </ul>
+                    
+                    <a href="404.html" class="btn btn-primary" style="margin-top: 20px; padding: 12px 30px;">Discover Our Work</a>
+                    
+                    <div class="counters-grid">
+                        <div class="counter-item">
+                            <h3 class="counter" data-target="500">0</h3>
+                            <p>Projects</p>
+                        </div>
+                        <div class="counter-item">
+                            <h3 class="counter" data-target="99">0</h3>
+                            <p>% System Uptime SLA</p>
+                        </div>
+                        <div class="counter-item">
+                            <h3 class="counter" data-target="98">0</h3>
+                            <p>% Deployment Speedup</p>
+                        </div>
+                        <div class="counter-item">
+                            <h3 class="counter" data-target="15">0</h3>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Why Choose Us (Horizontal Timeline Style) -->
+    <section class="why-timeline-section">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom: 60px;">
+                <span class="about-label">Why Choose Us</span>
+                <h2 style="font-size: 42px;">Engineering Excellence</h2>
+            </div>
+            
+            <!-- Desktop Timeline (Visible on Desktop, Hidden on Mobile) -->
+            <div class="timeline-horizontal-wrapper timeline-desktop fade-up">
+                <!-- Row 1: Top Content -->
+                <div class="timeline-row top-row">
+                    <!-- Column 1: Image (01) -->
+                    <div class="timeline-content-block">
+                        <div class="timeline-media-block">
+                            <img src="pic1.webp" alt="Industry Expertise">
+                        </div>
+                    </div>
+                    <!-- Column 2: Text (02) -->
+                    <div class="timeline-content-block">
+                        <div class="timeline-text-block text-top-align">
+                            <h3>Continuous Delivery</h3>
+                            <p>Every pipeline is built for scalability and speed, ensuring zero manual intervention.</p>
+                            <span class="timeline-number">02</span>
+                        </div>
+                    </div>
+                    <!-- Column 3: Image (03) -->
+                    <div class="timeline-content-block">
+                        <div class="timeline-media-block">
+                            <img src="pic3.webp" alt="Advanced Cloud Tech">
+                        </div>
+                    </div>
+                    <!-- Column 4: Text (04) -->
+                    <div class="timeline-content-block">
+                        <div class="timeline-text-block text-top-align">
+                            <h3>Dedicated Support</h3>
+                            <p>Our engineering teams provide 24/7 monitoring, alerting, and incident response for your cloud assets.</p>
+                            <span class="timeline-number">04</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Timeline Line & Dots -->
+                <div class="timeline-line-row">
+                    <div class="timeline-line-horizontal">
+                        <div class="timeline-arrow-left"><i class="fa-solid fa-arrow-left"></i></div>
+                        <div class="timeline-arrow-right"><i class="fa-solid fa-arrow-right"></i></div>
+                        
+                        <!-- The 4 dots placed along the line -->
+                        <div class="timeline-dots-container">
+                            <div class="timeline-dot-item"><div class="timeline-dot"></div></div>
+                            <div class="timeline-dot-item"><div class="timeline-dot"></div></div>
+                            <div class="timeline-dot-item"><div class="timeline-dot"></div></div>
+                            <div class="timeline-dot-item"><div class="timeline-dot"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Bottom Content -->
+                <div class="timeline-row bottom-row">
+                    <!-- Column 1: Text (01) -->
+                    <div class="timeline-content-block">
+                        <div class="timeline-text-block">
+                            <h3>Industry Expertise</h3>
+                            <p>Over a decade of hands-on experience delivering massive infrastructure projects on time and under budget.</p>
+                            <span class="timeline-number">01</span>
+                        </div>
+                    </div>
+                    <!-- Column 2: Image (02) -->
+                    <div class="timeline-content-block">
+                        <div class="timeline-media-block">
+                            <img src="pic10.webp" alt="Continuous Delivery">
+                        </div>
+                    </div>
+                    <!-- Column 3: Text (03) -->
+                    <div class="timeline-content-block">
+                        <div class="timeline-text-block">
+                            <h3>Advanced Cloud Tech</h3>
+                            <p>We leverage cutting-edge Kubernetes, Docker, and terraform configurations to optimize resource utilization.</p>
+                            <span class="timeline-number">03</span>
+                        </div>
+                    </div>
+                    <!-- Column 4: Image (04) -->
+                    <div class="timeline-content-block">
+                        <div class="timeline-media-block">
+                            <img src="pic11.webp" alt="Dedicated Support">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Timeline (Visible on Mobile, Hidden on Desktop) -->
+            <div class="timeline-mobile fade-up">
+                <div class="timeline-mobile-list">
+                    <!-- Item 1 -->
+                    <div class="timeline-mobile-item">
+                        <div class="timeline-media-block">
+                            <img src="pic1.webp" alt="Industry Expertise">
+                        </div>
+                        <div class="timeline-text-block">
+                            <span class="timeline-number">01</span>
+                            <h3>Industry Expertise</h3>
+                            <p>Over a decade of hands-on experience delivering massive infrastructure projects on time and under budget.</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="timeline-mobile-item">
+                        <div class="timeline-media-block">
+                            <img src="pic10.webp" alt="Continuous Delivery">
+                        </div>
+                        <div class="timeline-text-block">
+                            <span class="timeline-number">02</span>
+                            <h3>Continuous Delivery</h3>
+                            <p>Every pipeline is built for scalability and speed, ensuring zero manual intervention.</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="timeline-mobile-item">
+                        <div class="timeline-media-block">
+                            <img src="pic3.webp" alt="Advanced Cloud Tech">
+                        </div>
+                        <div class="timeline-text-block">
+                            <span class="timeline-number">03</span>
+                            <h3>Advanced Cloud Tech</h3>
+                            <p>We leverage cutting-edge Kubernetes, Docker, and terraform configurations to optimize resource utilization.</p>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="timeline-mobile-item">
+                        <div class="timeline-media-block">
+                            <img src="pic11.webp" alt="Dedicated Support">
+                        </div>
+                        <div class="timeline-text-block">
+                            <span class="timeline-number">04</span>
+                            <h3>Dedicated Support</h3>
+                            <p>Our engineering teams provide 24/7 monitoring, alerting, and incident response for your cloud assets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Meet Our Experts (Interactive) -->
+    <section class="team-section">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom: 60px;">
+                <span class="about-label">Our Experts</span>
+                <h2 style="font-size: 40px;">Meet The Leadership</h2>
+            </div>
+            
+            <div class="interactive-team-container fade-up">
+                <!-- LEFT: Thumbnails Curve -->
+                <div class="team-thumbnails left-curve">
+                    <div class="thumb-circle active" data-name="James Carter" data-role="CEO & DevOps Architect" data-desc="James brings over 20 years of experience in cloud systems engineering, leading Stackly from a DevOps startup to an enterprise automation leader." data-img="images/team_james.webp">
+                        <img src="images/team_james.webp" alt="James Carter">
+                    </div>
+                    <div class="thumb-circle" data-name="Sarah Jenkins" data-role="Chief Technology Officer" data-desc="Sarah is the mastermind behind our container orchestration platforms and GitOps continuous delivery blueprints." data-img="images/team_sarah.webp">
+                        <img src="images/team_sarah.webp" alt="Sarah Jenkins">
+                    </div>
+                    <div class="thumb-circle" data-name="David Chen" data-role="Head of Engineering" data-desc="David ensures that every cloud environment meets the highest standards for performance, security, and uptime." data-img="images/team_david.webp">
+                        <img src="images/team_david.webp" alt="David Chen">
+                    </div>
+                    <div class="thumb-circle" data-name="Elena Rodriguez" data-role="VP of DevSecOps" data-desc="Elena oversees our pipeline security, vulnerability scans, and ensures all infrastructure meets strict compliance standards." data-img="images/team_elena.webp">
+                        <img src="images/team_elena.webp" alt="Elena Rodriguez">
+                    </div>
+                </div>
+
+                <!-- MIDDLE: Big Circle -->
+                <div class="team-active-display middle-circle">
+                    <div class="big-circle-wrapper">
+                        <img src="images/team_james.webp" alt="James Carter" id="active-team-img" class="moving-img">
+                        <div class="active-team-socials" id="active-team-socials">
+                            <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Text Content -->
+                <div class="active-team-info right-content">
+                    <h3 id="active-team-name">James Carter</h3>
+                    <p id="active-team-role">CEO & DevOps Architect</p>
+                    <p class="bio" id="active-team-bio">Leading the strategic vision and overseeing global operations to automate software delivery and optimize cloud operations.</p>
+                </div>
+            </div>
+
+            <!-- Mobile-Only Team Grid -->
+            <div class="team-mobile-grid">
+                <div class="team-mobile-card">
+                    <img src="images/team_james.webp" alt="James Carter">
+                    <div class="team-mobile-info">
+                        <h3>James Carter</h3>
+                        <p class="role">CEO & DevOps Architect</p>
+                        <p class="bio">Leading the strategic vision and overseeing global operations to automate software delivery and optimize cloud operations.</p>
+                    </div>
+                </div>
+                <div class="team-mobile-card">
+                    <img src="images/team_sarah.webp" alt="Sarah Jenkins">
+                    <div class="team-mobile-info">
+                        <h3>Sarah Jenkins</h3>
+                        <p class="role">Chief Technology Officer</p>
+                        <p class="bio">Pioneering the development of our next-generation container configurations and GitOps deployment platforms.</p>
+                    </div>
+                </div>
+                <div class="team-mobile-card">
+                    <img src="images/team_david.webp" alt="David Chen">
+                    <div class="team-mobile-info">
+                        <h3>David Chen</h3>
+                        <p class="role">Head of Engineering</p>
+                        <p class="bio">Directing large-scale cloud infrastructure deployments and ensuring high-availability SLA standards across all clusters.</p>
+                    </div>
+                </div>
+                <div class="team-mobile-card">
+                    <img src="images/team_elena.webp" alt="Elena Rodriguez">
+                    <div class="team-mobile-info">
+                        <h3>Elena Rodriguez</h3>
+                        <p class="role">VP of DevSecOps</p>
+                        <p class="bio">Streamlining pipeline execution paths and optimizing cloud budgets for maximum cost efficiency and platform compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Achievements Section -->
+    <section class="about-achievements-section">
+        <div class="container">
+            <div class="achievements-grid">
+                <!-- Item 1 -->
+                <div class="achieve-card fade-up">
+                    <div class="achieve-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3 class="counter" data-target="500">0</h3>
+                    <p>Projects Completed</p>
+                    <div class="card-glow"></div>
+                </div>
+                <!-- Item 2 -->
+                <div class="achieve-card fade-up" style="transition-delay: 0.1s;">
+                    <div class="achieve-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="counter" data-target="20">0</h3>
+                    <p>K+ Happy Clients</p>
+                    <div class="card-glow"></div>
+                </div>
+                <!-- Item 3 -->
+                <div class="achieve-card fade-up" style="transition-delay: 0.2s;">
+                    <div class="achieve-icon"><i class="fa-solid fa-infinity"></i></div>
+                    <h3 class="counter" data-target="99.9">0</h3>
+                    <p>% System Uptime SLA</p>
+                    <div class="card-glow"></div>
+                </div>
+                <!-- Item 4 -->
+                <div class="achieve-card fade-up" style="transition-delay: 0.3s;">
+                    <div class="achieve-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h3 class="counter" data-target="30">0</h3>
+                    <p>Awards Won</p>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Creative CTA Section -->
+    <section class="about-cta-section">
+        <!-- Glowing background blobs -->
+        <div class="cta-glow s-1"></div>
+        <div class="cta-glow s-2"></div>
+        
+        <div class="container cta-grid">
+            <div class="cta-left fade-up">
+                <span class="about-label cta-eyebrow">START TODAY</span>
+                <h2 class="cta-title">Together, Let's Automate Your Delivery Pipelines</h2>
+                <p class="cta-desc">Join the automation revolution. Discover how Stackly can transform your infrastructure, lower cloud costs, and accelerate deployment speeds.</p>
+                
+                <div class="cta-actions">
+                    <a href="404.html" class="btn btn-primary">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="404.html" class="btn-outline-white">Contact Us</a>
+                </div>
+            </div>
+            
+            <div class="cta-right fade-up" style="transition-delay: 0.2s;"></div>
+        </div>
+    </section>
+    
+    </main>
+
+    <!-- Footer (Shared) -->
+    <footer class="premium-footer">
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="logo-removebg-preview.webp" alt="STACKLY" class="nav-logo-img" />
+                </a>
+                <p style="color: #ffffff !important;">Engineering intelligent, automated cloud systems for scalable, high-availability operations.</p>
+                <div class="footer-socials">
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="404.html">CI/CD Pipelines</a></li>
+                    <li><a href="404.html">Kubernetes Management</a></li>
+                    <li><a href="404.html">Cloud Orchestration</a></li>
+                    <li><a href="404.html">Continuous Observability</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <p style="color:#ffffff !important;">Subscribe to our newsletter for the latest DevOps insights.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p style="color:#ffffff !important;">&copy; 2026 Stackly. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="main.js"></script>
+    <script src="about.js"></script>
+</body>
+</html>

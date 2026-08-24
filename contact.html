@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | STACKLY</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <!-- Premium Oval Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="logo-removebg-preview.webp" alt="STACKLY" class="nav-logo-img" />
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a href="login.html" class="btn btn-login">Login</a>
+                <button class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="login.html" class="mobile-login-btn">Login</a></li>
+        </ul>
+    </div>
+
+    <main>
+    <section class="shared-hero" style="--bg-image: url('pic16.webp');">
+        <i class="fa-solid fa-infinity floating-leaf leaf-1"></i>
+        <i class="fa-solid fa-server floating-leaf leaf-2"></i>
+        <i class="fa-solid fa-gears floating-leaf leaf-3"></i>
+        
+        <div class="shared-hero-content">
+            <h1 class="split-text">START YOUR AUTOMATION</h1>
+            <p class="fade-up" style="transition-delay: 0.2s;">Our DevOps engineers and cloud consultants are ready to design your automated software delivery pipeline.</p>
+            <div class="breadcrumbs fade-up" style="transition-delay: 0.3s;">
+                <a href="index.html">Home</a> &nbsp;/&nbsp; <span>Contact</span>
+            </div>
+        </div>
+
+        <div class="hero-curve">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 2. Contact Info Cards -->
+    <section class="contact-info-section" style="background-color: var(--bg-alt); padding: 100px 0; position: relative; z-index: 2; margin-top: -80px;">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Card 1 -->
+                <div class="contact-card fade-up">
+                    <div class="icon-wrapper"><i class="fa-solid fa-location-dot"></i></div>
+                    <h3>Headquarters</h3>
+                    <p>100 Automation Parkway<br>Suite 500<br>San Francisco, CA 94107</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="contact-card fade-up" style="transition-delay: 0.1s;">
+                    <div class="icon-wrapper"><i class="fa-solid fa-phone"></i></div>
+                    <h3>Call Us</h3>
+                    <p><strong>Sales:</strong> +1 (800) 555-0199<br><strong>Support:</strong> +1 (800) 555-0198<br>Mon-Fri, 9am-6pm EST</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="contact-card fade-up" style="transition-delay: 0.2s;">
+                    <div class="icon-wrapper"><i class="fa-solid fa-envelope"></i></div>
+                    <h3>Email Us</h3>
+                    <p><strong>General:</strong> hello@stackly.com<br><strong>Sales:</strong> sales@stackly.com<br><strong>Press:</strong> media@stackly.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- 3. Interactive Form -->
+    <section class="contact-form-section" style="background-color: var(--bg-color); padding: 120px 0; position: relative;">
+        <!-- Background Glows -->
+        <div style="position: absolute; top: 10%; left: -5%; width: 400px; height: 400px; background: rgba(14, 55, 60, 0.4); filter: blur(80px); border-radius: 50%; z-index: 0;"></div>
+        
+        <div class="container position-relative z-index-1">
+            <div class="row contact-form-row">
+                <div class="form-content fade-up" style="flex: 1;">
+                    <span class="cinematic-eyebrow">SEND A MESSAGE</span>
+                    <h2 class="cinematic-title" style="margin-bottom: 20px;">Let's Talk Solutions</h2>
+                    <p style="font-size: 16px; margin-bottom: 40px;">Fill out the form below and one of our dedicated cloud consultants will get back to you within 24 hours.</p>
+                    
+                    <form id="contactForm" class="premium-form">
+                        <div class="form-row-grid">
+                            <div class="input-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" required>
+                                <div class="input-border"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" required>
+                                <div class="input-border"></div>
+                            </div>
+                        </div>
+                        <div class="form-row-grid">
+                            <div class="input-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" required>
+                                <div class="input-border"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone">
+                                <div class="input-border"></div>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin-bottom: 20px;">
+                            <label for="interest">Area of Interest</label>
+                            <select id="interest" required>
+                                <option value="" disabled selected>Select a solution</option>
+                                <option value="solar">Utility-Scale Solar</option>
+                                <option value="wind">Kubernetes Orchestration</option>
+                                <option value="smartgrid">Continuous Observability Integration</option>
+                                <option value="iac">Infrastructure as Code</option>
+                            </select>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="input-group" style="margin-bottom: 30px;">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required></textarea>
+                            <div class="input-border"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px; font-size: 16px;">Send Message</button>
+                    </form>
+                </div>
+                <div class="form-image fade-up" style="flex: 1;">
+                    <img src="pic12.webp" alt="Let's Talk Solutions" class="form-card-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Global Presence Map -->
+    <section class="global-map-section" style="background-color: var(--bg-alt); padding: 120px 0;">
+        <div class="container text-center">
+            <span class="cinematic-eyebrow fade-up" style="color: var(--accent-color);">GLOBAL PRESENCE</span>
+            <h2 class="cinematic-title fade-up" style="font-size: 42px; margin-bottom: 60px;">We Are Everywhere</h2>
+            
+            <div class="map-wrapper fade-up" style="position: relative; max-width: 1000px; margin: 0 auto;">
+                <img src="images/mapp.webp" alt="World Map" style="width: 100%; opacity: 0.15;">
+                
+                <!-- Map Dots -->
+                <div class="map-dot" style="top: 30%; left: 15%;"><div class="pulse"></div><span class="tooltip">San Francisco, USA</span></div>
+                <div class="map-dot" style="top: 35%; left: 25%;"><div class="pulse"></div><span class="tooltip">New York, USA</span></div>
+                <div class="map-dot" style="top: 25%; left: 45%;"><div class="pulse"></div><span class="tooltip">London, UK</span></div>
+                <div class="map-dot" style="top: 30%; left: 52%;"><div class="pulse"></div><span class="tooltip">Berlin, Germany</span></div>
+                <div class="map-dot" style="top: 45%; left: 60%;"><div class="pulse"></div><span class="tooltip">Dubai, UAE</span></div>
+                <div class="map-dot" style="top: 40%; left: 80%;"><div class="pulse"></div><span class="tooltip">Tokyo, Japan</span></div>
+                <div class="map-dot" style="top: 75%; left: 85%;"><div class="pulse"></div><span class="tooltip">Sydney, Australia</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FAQ Accordion -->
+    <section class="faq-section" style="background-color: var(--bg-color); padding: 120px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="text-center section-header fade-up" style="margin-bottom: 60px;">
+                <h2 class="cinematic-title" style="font-size: 42px;">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-accordion fade-up" style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3>What is the typical ROI for a commercial solar installation?</h3>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p>Most of our commercial clients see a return on investment within 3-5 years, depending on cloud resources and infrastructure optimizations. Our AI-driven efficiency systems often shorten this timeframe by an additional 15%.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3>Do you handle international deployments?</h3>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p>Absolutely. Stackly has operations in over 50 countries. We manage end-to-end logistics, local regulatory compliance, and on-site engineering teams regardless of your global location.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3>How does your Continuous Observability AI actually work?</h3>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p>Our proprietary software uses predictive machine learning to anticipate network traffic spikes based on historical data, weather patterns, and operational schedules. It then automatically routes stored battery power or grid power precisely where and when it's needed.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3>What happens on cloudy or windless days?</h3>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p>Our installations utilize massive, utility-scale solid-state battery storage systems. Excess throughput generated during peak conditions is stored with near-zero degradation and automatically deployed during low-traffic periods.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="premium-footer">
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="logo-removebg-preview.webp" alt="STACKLY" class="nav-logo-img" />
+                </a>
+                <p style="color: #ffffff !important;">Engineering intelligent, automated cloud systems for scalable, high-availability operations.</p>
+                <div class="footer-socials">
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="404.html">CI/CD Pipelines</a></li>
+                    <li><a href="404.html">Kubernetes Management</a></li>
+                    <li><a href="404.html">Cloud Orchestration</a></li>
+                    <li><a href="404.html">Continuous Observability</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <p style="color:#ffffff !important;">Subscribe to our newsletter for the latest DevOps insights.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p style="color:#ffffff !important;">&copy; 2026 Stackly. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="main.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

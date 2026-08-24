@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | STACKLY</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+
+    <!-- Premium Oval Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="logo-removebg-preview.webp" alt="STACKLY" class="nav-logo-img" />
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a href="login.html" class="btn btn-login">Login</a>
+                <button class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="mobile-login-btn">Login</a></li>
+        </ul>
+    </div>
+
+    <main>
+    <!-- 1. Hero Banner -->
+    <section class="shared-hero">
+        <video class="shared-hero-video" autoplay muted loop playsinline preload="auto" poster="images/biomass.webp">
+            <source src="vi3.mp4" type="video/mp4">
+        </video>
+        <i class="fa-solid fa-infinity floating-leaf leaf-1"></i>
+        <i class="fa-solid fa-server floating-leaf leaf-2"></i>
+        <i class="fa-solid fa-gears floating-leaf leaf-3"></i>
+        
+        <div class="shared-hero-content">
+            <h1 class="split-text">Smart Cloud Automation & DevOps Solutions for Every Need</h1>
+            <p class="fade-up" style="transition-delay: 0.2s;">Step into the future of cloud computing. Explore our range of cutting-edge DevOps solutions designed to automate your infrastructure efficiently and securely.</p>
+            <div class="breadcrumbs fade-up" style="transition-delay: 0.3s;">
+                <a href="index.html">Home</a> &nbsp;/&nbsp; <span>Services</span>
+            </div>
+        </div>
+
+        <div class="hero-curve">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 2. Interactive Services Showcase -->
+    <section class="horizontal-showcase-section" id="showcase-section">
+        <div class="showcase-sticky-wrapper">
+            <div class="container showcase-header-container">
+                <div class="showcase-header">
+                    <span class="section-eyebrow">CORE SOLUTIONS</span>
+                    <h2 class="section-title">Automation For Tomorrow</h2>
+                </div>
+                
+                <!-- Progress Indicator -->
+                <div class="showcase-progress-wrapper">
+                    <div class="showcase-progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+
+            <!-- Horizontal Container -->
+            <div class="horizontal-container-outer">
+                <div class="horizontal-container-inner" id="horizontal-track">
+                    <!-- Service 1: CI/CD Pipelines -->
+                    <div class="showcase-card">
+                        <div class="card-inner">
+                            <div class="card-image-wrapper">
+                                <img src="pic11.webp" alt="CI/CD Pipelines">
+                                <div class="image-reveal-overlay"></div>
+                            </div>
+                            <div class="card-text-wrapper">
+                                <span class="card-num">01</span>
+                                <h3>CI/CD Pipelines</h3>
+                                <p>Harness the power of continuous automation. We design and deploy high-performance CI/CD systems that maximize integration speed and build reliability.</p>
+                                <ul class="card-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Automated build & test workflows</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Multi-stage deploy runners</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Real-time build status tracking</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Immutable build artifacts</li>
+                                </ul>
+                                <a href="404.html" class="btn-card-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Wind Energy -->
+                    <div class="showcase-card">
+                        <div class="card-inner">
+                            <div class="card-image-wrapper">
+                                <img src="pic10.webp" alt="Cloud Infrastructure">
+                                <div class="image-reveal-overlay"></div>
+                            </div>
+                            <div class="card-text-wrapper">
+                                <span class="card-num">02</span>
+                                <h3>Cloud Infrastructure</h3>
+                                <p>Provision your multi-cloud environment. Our modern landing zones are engineered for maximum auto-scaling capability and security.</p>
+                                <ul class="card-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> AWS, GCP & Azure setups</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Cloud budget cost optimization</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Secure IAM access control</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Multi-region data replication</li>
+                                </ul>
+                                <a href="404.html" class="btn-card-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Hydropower -->
+                    <div class="showcase-card">
+                        <div class="card-inner">
+                            <div class="card-image-wrapper">
+                                <img src="pic9.webp" alt="Kubernetes & Containers">
+                                <div class="image-reveal-overlay"></div>
+                            </div>
+                            <div class="card-text-wrapper">
+                                <span class="card-num">03</span>
+                                <h3>Kubernetes & Containers</h3>
+                                <p>Manage containerized microservices at scale. Our enterprise Kubernetes configurations provide highly reliable, zero-downtime container cluster orchestration.</p>
+                                <ul class="card-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Multi-tenant clusters</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Automated microservice load balancing</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Self-healing container restarts</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Optimized host node utilization</li>
+                                </ul>
+                                <a href="404.html" class="btn-card-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Biomass Energy -->
+                    <div class="showcase-card">
+                        <div class="card-inner">
+                            <div class="card-image-wrapper">
+                                <img src="pic8.webp" alt="Infrastructure as Code">
+                                <div class="image-reveal-overlay"></div>
+                            </div>
+                            <div class="card-text-wrapper">
+                                <span class="card-num">04</span>
+                                <h3>Infrastructure as Code</h3>
+                                <p>Convert configuration into immutable infrastructure. Our advanced IaC solutions utilize Terraform blueprints to provision server layers securely.</p>
+                                <ul class="card-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Version-controlled environments</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Dry-run plan validation scripts</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Modular reusable terraform modules</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Integrated drift detection checks</li>
+                                </ul>
+                                <a href="404.html" class="btn-card-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Battery Storage -->
+                    <div class="showcase-card">
+                        <div class="card-inner">
+                            <div class="card-image-wrapper">
+                                <img src="pic1.webp" alt="DevSecOps & Compliance">
+                                <div class="image-reveal-overlay"></div>
+                            </div>
+                            <div class="card-text-wrapper">
+                                <span class="card-num">05</span>
+                                <h3>DevSecOps & Compliance</h3>
+                                <p>Secure pipelines from the ground up. Our DevSecOps scanning runs static and dynamic tests to ensure a continuous, secure software supply chain.</p>
+                                <ul class="card-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Automated vulnerability scans</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Static code analysis (SAST)</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Pipeline secret scanning</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> SOC2 & ISO compliance controls</li>
+                                </ul>
+                                <a href="404.html" class="btn-card-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 6: Continuous Observability -->
+                    <div class="showcase-card">
+                        <div class="card-inner">
+                            <div class="card-image-wrapper">
+                                <img src="pic3.webp" alt="Observability & Alerting">
+                                <div class="image-reveal-overlay"></div>
+                            </div>
+                            <div class="card-text-wrapper">
+                                <span class="card-num">06</span>
+                                <h3>Observability & Alerting</h3>
+                                <p>Intelligent cluster diagnostics. We deploy advanced centralized metrics platforms that dynamically route alerts and eliminate system downtime completely.</p>
+                                <ul class="card-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> AI-powered log analysis</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Decentralized tracing grids</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Real-time cluster diagnostics</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Seamless Slack & PagerDuty alerts</li>
+                                </ul>
+                                <a href="404.html" class="btn-card-learn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Our Service Process -->
+    <section class="process-timeline-section">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom: 80px;">
+                <span class="section-eyebrow">OUR METHODOLOGY</span>
+                <h2 class="section-title">How We Integrate</h2>
+            </div>
+            
+            <div class="vertical-timeline-wrapper">
+                <!-- SVG Connecting Line -->
+                <div class="svg-line-container">
+                    <svg class="timeline-svg" viewBox="0 0 100 1000" preserveAspectRatio="none">
+                        <!-- Background dashed path -->
+                        <path class="timeline-path-bg" d="M50,0 L50,1000" stroke="rgba(140,198,63,0.15)" stroke-width="4" fill="none" stroke-dasharray="10, 10"></path>
+                        <!-- Animated colored path -->
+                        <path class="timeline-path-active" id="active-path" d="M50,0 L50,1000" stroke="var(--primary-green)" stroke-width="4" fill="none"></path>
+                    </svg>
+                </div>
+                
+                <div class="timeline-steps-list">
+                    <!-- Step 1: Consultation -->
+                    <div class="timeline-step-item left-align fade-up-step">
+                        <div class="step-content">
+                            <span class="step-num">01</span>
+                            <h3>Consultation</h3>
+                            <p>We begin by discussing your system architecture, deployment cycles, and operational scalability goals to formulate a tailored strategy.</p>
+                        </div>
+                        <div class="step-icon-wrapper">
+                            <div class="step-icon"><i class="fa-solid fa-comments-dollar"></i></div>
+                        </div>
+                        <div class="step-empty"></div>
+                    </div>
+
+                    <!-- Step 2: Infrastructure Assessment -->
+                    <div class="timeline-step-item right-align fade-up-step">
+                        <div class="step-empty"></div>
+                        <div class="step-icon-wrapper">
+                            <div class="step-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-num">02</span>
+                            <h3>Infrastructure Assessment</h3>
+                            <p>Our engineering team conducts detailed security and network audits using scanning tools and telemetry reports to map your current bottlenecks.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Custom Design -->
+                    <div class="timeline-step-item left-align fade-up-step">
+                        <div class="step-content">
+                            <span class="step-num">03</span>
+                            <h3>Custom Design</h3>
+                            <p>We engineer a bespoke cloud configuration using advanced modular blueprints, optimizing for latency, cloud cost, and network isolation.</p>
+                        </div>
+                        <div class="step-icon-wrapper">
+                            <div class="step-icon"><i class="fa-solid fa-cubes"></i></div>
+                        </div>
+                        <div class="step-empty"></div>
+                    </div>
+
+                    <!-- Step 4: Pipeline Deployment -->
+                    <div class="timeline-step-item right-align fade-up-step">
+                        <div class="step-empty"></div>
+                        <div class="step-icon-wrapper">
+                            <div class="step-icon"><i class="fa-solid fa-code-fork"></i></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-num">04</span>
+                            <h3>Pipeline Deployment</h3>
+                            <p>Our certified DevOps architects integrate and build your automated pipelines using industry-leading tools, keeping downtime to a minimum.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Monitoring -->
+                    <div class="timeline-step-item left-align fade-up-step">
+                        <div class="step-content">
+                            <span class="step-num">05</span>
+                            <h3>Monitoring</h3>
+                            <p>We connect your environments to our observability grid, initializing real-time analytics that track and alert on system performance.</p>
+                        </div>
+                        <div class="step-icon-wrapper">
+                            <div class="step-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        </div>
+                        <div class="step-empty"></div>
+                    </div>
+
+                    <!-- Step 6: Continuous Optimization -->
+                    <div class="timeline-step-item right-align fade-up-step">
+                        <div class="step-empty"></div>
+                        <div class="step-icon-wrapper">
+                            <div class="step-icon"><i class="fa-solid fa-gears"></i></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-num">06</span>
+                            <h3>Continuous Optimization</h3>
+                            <p>Our team provides regular resource audits, security patches, and 24/7 technical support to guarantee maximum cluster stability and budget efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Why Choose Our Services -->
+    <section class="why-choose-services-section">
+        <div class="container">
+            <div class="why-grid">
+                <!-- Left Column: Large Image -->
+                <div class="why-left fade-right">
+                    <div class="why-image-wrapper">
+                        <img src="pic2.webp" alt="Engineering Excellence in Cloud Operations" class="moving-img">
+                        <div class="experience-years-badge">
+                            <span class="badge-num">15+</span>
+                            <span class="badge-lbl">Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Features -->
+                <div class="why-right fade-left">
+                    <span class="section-eyebrow">WHY CHOOSE US</span>
+                    <h2 class="section-title">Engineering Excellence in Cloud Operations</h2>
+                    
+                    <div class="why-features-list">
+                        <!-- Feature 1 -->
+                        <div class="why-feature-card">
+                            <div class="feat-icon"><i class="fa-solid fa-user-shield"></i></div>
+                            <div class="feat-info">
+                                <h3>Certified Experts</h3>
+                                <p>Our highly trained engineers carry AWS, Google Cloud, and Kubernetes certifications.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Feature 2 -->
+                        <div class="why-feature-card">
+                            <div class="feat-icon"><i class="fa-solid fa-infinity"></i></div>
+                            <div class="feat-info">
+                                <h3>Reliable Architectures</h3>
+                                <p>We deploy highly available, fault-tolerant system setups engineered for a 99.99% uptime lifecycle.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Feature 3 -->
+                        <div class="why-feature-card">
+                            <div class="feat-icon"><i class="fa-solid fa-wallet"></i></div>
+                            <div class="feat-info">
+                                <h3>Cloud Cost Savings</h3>
+                                <p>Significantly lower your monthly cloud infrastructure spend and hedge against resource over-provisioning.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Feature 4 -->
+                        <div class="why-feature-card">
+                            <div class="feat-icon"><i class="fa-solid fa-headset"></i></div>
+                            <div class="feat-info">
+                                <h3>24/7 Support</h3>
+                                <p>Our Operations Center monitors your pipelines and alerts around the clock, resolving issues instantly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="why-stats-row fade-up">
+                <!-- Stat 1 -->
+                <div class="why-stat-box">
+                    <div class="stat-num-container">
+                        <h3 class="counter" data-target="500">0</h3>
+                        <span class="stat-plus">+</span>
+                    </div>
+                    <p>Projects Completed</p>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="why-stat-box">
+                    <div class="stat-num-container">
+                        <h3 class="counter" data-target="98">0</h3>
+                        <span class="stat-plus">%</span>
+                    </div>
+                    <p>Deployment Speedup</p>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="why-stat-box">
+                    <div class="stat-num-container">
+                        <h3 class="counter" data-target="99">0</h3>
+                        <span class="stat-plus">.9%</span>
+                    </div>
+                    <p>System Uptime SLA</p>
+                </div>
+                
+                <!-- Stat 4 -->
+                <div class="why-stat-box">
+                    <div class="stat-num-container">
+                        <h3 class="counter" data-target="15">0</h3>
+                        <span class="stat-plus">+</span>
+                    </div>
+                    <p>Years of Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Call to Action -->
+    <section class="services-cta-section cta-bg">
+        <!-- Floating organic shapes -->
+        <div class="cta-shape shape-1"></div>
+        <div class="cta-shape shape-2"></div>
+        
+        <div class="container position-relative z-index-2 fade-up">
+            <span class="cta-label">START TODAY</span>
+            <h2 class="cta-title">Let's Automate Your Infrastructure Together</h2>
+            <p class="cta-desc">Join the DevOps automation revolution today. Get in touch with our expert engineering team for a free consultation and customized cloud assessment.</p>
+            
+            <div class="cta-buttons">
+                <a href="404.html" class="btn btn-primary">Get Free Consultation</a>
+                <a href="404.html" class="btn-outline-white">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="premium-footer">
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="logo-removebg-preview.webp" alt="STACKLY" class="nav-logo-img" />
+                </a>
+                <p style="color: #ffffff !important;">Engineering intelligent, automated cloud systems for scalable, high-availability operations.</p>
+                <div class="footer-socials">
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="404.html">CI/CD Pipelines</a></li>
+                    <li><a href="404.html">Kubernetes Management</a></li>
+                    <li><a href="404.html">Cloud Orchestration</a></li>
+                    <li><a href="404.html">Continuous Observability</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <p style="color:#ffffff !important;">Subscribe to our newsletter for the latest DevOps insights.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p style="color:#ffffff !important;">&copy; 2026 Stackly. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="main.js"></script>
+    <script src="services.js"></script>
+</body>
+</html>

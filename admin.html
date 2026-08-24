@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STACKLY · DevOps Admin Command Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════
+    SIDEBAR
+    ═══════════════════════════════════════════════════ -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <a href="index.html"><img src="logo-removebg-preview.webp" alt="STACKLY" class="nav-logo-img" /></a>
+            <span class="admin-badge">Admin</span>
+            <button class="sidebar-close" id="sidebarCloseBtn">✕</button>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Dashboard</div>
+            <a href="#" class="nav-item active" data-page="overview"><i class="ph ph-squares-four"></i><span>Overview</span></a>
+            <a href="#" class="nav-item" data-page="metrics"><i class="ph ph-chart-line-up"></i><span>Metrics</span></a>
+            <a href="#" class="nav-item" data-page="sites"><i class="ph ph-lightning"></i><span>Cloud Cluster Infrastructure</span></a>
+            <a href="#" class="nav-item" data-page="alerts"><i class="ph ph-bell-ringing"></i><span>Alerts</span><span class="badge-pill">5</span></a>
+            <div class="nav-section-label">Management</div>
+            <a href="#" class="nav-item" data-page="users"><i class="ph ph-users"></i><span>Engineers</span></a>
+            <a href="#" class="nav-item" data-page="devices"><i class="ph ph-cpu"></i><span>Assets</span></a>
+            <a href="#" class="nav-item" data-page="reports"><i class="ph ph-file-text"></i><span>Reports</span></a>
+            <a href="#" class="nav-item" data-page="billing"><i class="ph ph-credit-card"></i><span>Billing</span></a>
+            <div class="nav-section-label">System</div>
+            <a href="#" class="nav-item" data-page="logs"><i class="ph ph-terminal"></i><span>System Logs</span></a>
+            <a href="#" class="nav-item" data-page="settings"><i class="ph ph-gear"></i><span>Settings</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="login.html" class="logout-btn" id="logoutBtn"><i class="ph ph-sign-out"></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- ═══════════════════════════════════════════════════
+    TOPBAR
+    ═══════════════════════════════════════════════════ -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <button class="hamburger" id="hamburger"><i class="ph ph-list"></i></button>
+            <div class="topbar-title" id="pageTitle">Overview</div>
+        </div>
+        <div class="topbar-right">
+            <div class="topbar-actions">
+                <button class="topbar-btn" onclick="location.href='404.html'"><i class="ph ph-bell"></i></button>
+                <button class="topbar-btn" onclick="location.href='404.html'"><i class="ph ph-magnifying-glass"></i></button>
+                <button class="topbar-btn" onclick="location.href='404.html'"><i class="ph ph-plus-circle"></i></button>
+            </div>
+            <div class="user-profile">
+                <div class="user-avatar" id="userAvatar">A</div>
+                <div class="user-info-text">
+                    <div class="user-name" id="userName">Admin</div>
+                    <div class="user-email" id="userEmail">admin@stackly.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ═══════════════════════════════════════════════════
+    MAIN CONTENT
+    ═══════════════════════════════════════════════════ -->
+    <main class="main-content">
+
+        <!-- ─── OVERVIEW ─── -->
+        <div class="page active" id="page-overview">
+            <div class="user-greeting">
+                <div>
+                    <h2 id="greetName">Hello, Admin!</h2>
+                    <p id="greetEmail">admin@stackly.com · Administrator</p>
+                </div>
+                <div class="greeting-badges">
+                    <div class="greeting-badge green"><i class="ph ph-activity"></i> All Clusters Operational</div>
+                    <div class="greeting-badge amber"><i class="ph ph-warning"></i> 5 Pending Alerts</div>
+                </div>
+            </div>
+
+            <div class="metrics-observability">
+                <div class="metric-card"><div class="metric-icon orange"><i class="ph ph-sun"></i></div><div class="metric-info"><div class="metric-val" id="mStudies">34</div><div class="metric-lbl">Kubernetes Clusters</div><div class="metric-delta up"><i class="ph ph-trend-up"></i> +3</div></div></div>
+                <div class="metric-card"><div class="metric-icon green"><i class="ph ph-check-circle"></i></div><div class="metric-info"><div class="metric-val">142k</div><div class="metric-lbl">CI/CD Builds Run</div><div class="metric-delta up"><i class="ph ph-trend-up"></i> +12%</div></div></div>
+                <div class="metric-card"><div class="metric-icon teal"><i class="ph ph-k8s"></i></div><div class="metric-info"><div class="metric-val">42</div><div class="metric-lbl">Compute Nodes</div><div class="metric-delta neutral"><i class="ph ph-minus"></i> Stable</div></div></div>
+                <div class="metric-card"><div class="metric-icon amber"><i class="ph ph-bell-ringing"></i></div><div class="metric-info"><div class="metric-val">5</div><div class="metric-lbl">Active Alerts</div><div class="metric-delta down"><i class="ph ph-trend-down"></i> -2</div></div></div>
+                <div class="metric-card"><div class="metric-icon purple"><i class="ph ph-users"></i></div><div class="metric-info"><div class="metric-val">200</div><div class="metric-lbl">DevOps Engineers</div><div class="metric-delta up"><i class="ph ph-trend-up"></i> +8</div></div></div>
+                <div class="metric-card"><div class="metric-icon rose"><i class="ph ph-currency-dollar"></i></div><div class="metric-info"><div class="metric-val">$18.4M</div><div class="metric-lbl">Monthly Cloud Budget</div><div class="metric-delta up"><i class="ph ph-trend-up"></i> +6.4%</div></div></div>
+            </div>
+
+            <div class="panel-row">
+                <div class="panel"><div class="panel-header"><h3>Cluster Resource Usage</h3><a href="404.html" class="btn-sm">Full Report</a></div><div class="chart-area" id="chartArea"></div></div>
+                <div class="panel"><div class="panel-header"><h3>System Cluster Status</h3><a href="404.html" class="btn-sm">Manage</a></div><div class="site-rows" id="siteRows"></div></div>
+            </div>
+        </div>
+
+        <!-- ─── METRICS ─── -->
+        <div class="page" id="page-metrics">
+            <h2 class="page-heading">Performance Metrics</h2>
+            <div class="metrics-observability">
+                <div class="metric-card"><div class="metric-icon orange"><i class="ph ph-sun"></i></div><div class="metric-info"><div class="metric-val">23</div><div class="metric-lbl">Active Projects</div></div></div>
+                <div class="metric-card"><div class="metric-icon green"><i class="ph ph-check-circle"></i></div><div class="metric-info"><div class="metric-val">142k</div><div class="metric-lbl">CI/CD Builds</div></div></div>
+                <div class="metric-card"><div class="metric-icon teal"><i class="ph ph-activity"></i></div><div class="metric-info"><div class="metric-val">99.9</div><div class="metric-lbl">Efficiency (%)</div></div></div>
+                <div class="metric-card"><div class="metric-icon amber"><i class="ph ph-currency-dollar"></i></div><div class="metric-info"><div class="metric-val">18</div><div class="metric-lbl">Active Contracts</div></div></div>
+            </div>
+            <div class="big-chart-wrap"><div class="panel"><div class="panel-header"><h3>Yearly Builds Executed</h3><a href="404.html" class="btn-sm">Export</a></div><canvas id="bigChart" class="big-canvas"></canvas></div></div>
+            <button class="page-btn" onclick="location.href='404.html'"><i class="ph ph-download-simple"></i> Download Full Metrics</button>
+        </div>
+
+        <!-- ─── INFRASTRUCTURE MANAGER ─── -->
+        <div class="page" id="page-sites">
+            <h2 class="page-heading">Infrastructure Manager</h2>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Site</th><th>Region</th><th>Active Panels</th><th>Status</th><th>Actions</th></tr></thead><tbody><tr><td>US-East AWS Cluster</td><td>US-East</td><td>12,400</td><td><span class="status-pill on">Active</span></td><td><a href="404.html" class="btn-sm">Edit</a></td></tr><tr><td>EU-West GCP Cluster</td><td>EU-West</td><td>8,600</td><td><span class="status-pill on">Active</span></td><td><a href="404.html" class="btn-sm">Edit</a></td></tr><tr><td>AP-South AWS Cluster</td><td>AP-South</td><td>4,200</td><td><span class="status-pill on">Active</span></td><td><a href="404.html" class="btn-sm">Edit</a></td></tr><tr><td>US-West Azure Cluster</td><td>US-West</td><td>6,400</td><td><span class="status-pill on">Active</span></td><td><a href="404.html" class="btn-sm">Edit</a></td></tr><tr><td>EU-Central GCP Cluster</td><td>EU-Central</td><td>—</td><td><span class="status-pill warn">Maintenance</span></td><td><a href="404.html" class="btn-sm">Edit</a></td></tr><tr><td>AP-East Solar Farm</td><td>AP-East</td><td>9,100</td><td><span class="status-pill on">Active</span></td><td><a href="404.html" class="btn-sm">Edit</a></td></tr></tbody></table></div>
+            <button class="page-btn" onclick="location.href='404.html'"><i class="ph ph-plus"></i> Add Site</button>
+        </div>
+
+        <!-- ─── REVIEWS ─── -->
+        <div class="page" id="page-alerts">
+            <h2 class="page-heading">System Alerts</h2>
+            <div class="alerts-list"><div class="alert-card warn"><i class="ph ph-warning"></i><div><strong>Inverter Cluster A</strong><p>Scheduled maintenance active</p><span class="alert-time">2 hrs ago</span></div><a href="404.html" class="btn-sm">Resolve</a></div><div class="alert-card info"><i class="ph ph-info"></i><div><strong>Load Balancer EU</strong><p>Grid load spiked 12%</p><span class="alert-time">5 hrs ago</span></div><a href="404.html" class="btn-sm">Details</a></div><div class="alert-card warn"><i class="ph ph-warning"></i><div><strong>Battery Cell B</strong><p>Capacity at 90%</p><span class="alert-time">8 hrs ago</span></div><a href="404.html" class="btn-sm">Schedule</a></div></div>
+            <button class="page-btn" onclick="location.href='404.html'"><i class="ph ph-bell-slash"></i> Dismiss All</button>
+        </div>
+
+        <!-- ─── ENGINEERS ─── -->
+        <div class="page" id="page-users">
+            <h2 class="page-heading">Engineer Management</h2>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th></tr></thead><tbody><tr><td>Dr. Elena Vasquez</td><td>elena@stackly.com</td><td>Admin</td><td><span class="status-pill on">Active</span></td><td><a href="404.html" class="btn-sm">Edit</a></td></tr><tr><td>Prof. James O'Donnell</td><td>james@stackly.com</td><td>Lead Tech</td><td><span class="status-pill on">Active</span></td><td><a href="404.html" class="btn-sm">Edit</a></td></tr><tr><td>Dr. Lisa Park</td><td>lisa@stackly.com</td><td>Senior Tech</td><td><span class="status-pill warn">Pending</span></td><td><a href="404.html" class="btn-sm">Edit</a></td></tr></tbody></table></div>
+            <button class="page-btn" onclick="location.href='404.html'"><i class="ph ph-user-plus"></i> Invite Engineer</button>
+        </div>
+
+        <!-- ─── ASSETS ─── -->
+        <div class="page" id="page-devices">
+            <h2 class="page-heading">Infrastructure Assets</h2>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Device ID</th><th>Type</th><th>Location</th><th>Last Ping</th><th>Status</th></tr></thead><tbody><tr><td>PNL-SOL-001</td><td>Solar Panel Array</td><td>US-East</td><td>2m ago</td><td><span class="status-pill on">Online</span></td></tr><tr><td>TRB-WND-002</td><td>Wind Turbine</td><td>EU-West</td><td>1m ago</td><td><span class="status-pill on">Online</span></td></tr><tr><td>BAT-STR-003</td><td>Battery Cell</td><td>EU-Central</td><td>4h ago</td><td><span class="status-pill warn">Offline</span></td></tr></tbody></table></div>
+            <button class="page-btn" onclick="location.href='404.html'"><i class="ph ph-plus"></i> Register Asset</button>
+        </div>
+
+        <!-- ─── REPORTS ─── -->
+        <div class="page" id="page-reports">
+            <h2 class="page-heading">Admin Reports</h2>
+            <div class="report-list"><div class="report-item"><i class="ph ph-file-text"></i><div><strong>Executive Summary — June 2026</strong><p>Full KPI breakdown</p></div><a href="404.html" class="btn-sm">Download</a></div><div class="report-item"><i class="ph ph-file-text"></i><div><strong>Compliance Report — Q1 2026</strong><p>Regulatory metrics</p></div><a href="404.html" class="btn-sm">Download</a></div><div class="report-item"><i class="ph ph-file-text"></i><div><strong>Financial Report — FY 2025</strong><p>Revenue &amp; ROI</p></div><a href="404.html" class="btn-sm">Download</a></div></div>
+            <button class="page-btn" onclick="location.href='404.html'"><i class="ph ph-plus"></i> Generate Report</button>
+        </div>
+
+        <!-- ─── BILLING ─── -->
+        <div class="page" id="page-billing">
+            <h2 class="page-heading">Billing & Budgets</h2>
+            <div class="billing-metrics-observability">
+                <div class="metric-card"><div class="metric-icon green"><i class="ph ph-currency-dollar"></i></div><div class="metric-info"><div class="metric-val">$18.4M</div><div class="metric-lbl">Spend This Qtr</div></div></div>
+                <div class="metric-card"><div class="metric-icon blue"><i class="ph ph-receipt"></i></div><div class="metric-info"><div class="metric-val">6</div><div class="metric-lbl">Invoices Pending</div></div></div>
+                <div class="metric-card"><div class="metric-icon teal"><i class="ph ph-check-circle"></i></div><div class="metric-info"><div class="metric-val">$42M</div><div class="metric-lbl">YTD Approved Budget</div></div></div>
+            </div>
+            <button class="page-btn" onclick="location.href='404.html'"><i class="ph ph-receipt"></i> View Invoices</button>
+        </div>
+
+        <!-- ─── LOGS ─── -->
+        <div class="page" id="page-logs">
+            <h2 class="page-heading">System Logs</h2>
+            <div class="log-terminal" id="logTerminal"></div>
+            <button class="page-btn" onclick="location.href='404.html'"><i class="ph ph-download-simple"></i> Export Logs</button>
+        </div>
+
+        <!-- ─── SETTINGS ─── -->
+        <div class="page" id="page-settings">
+            <h2 class="page-heading">System Settings</h2>
+            <div class="settings-list"><div class="setting-row"><span>Grid Configuration</span><a href="404.html" class="btn-sm">Manage</a></div><div class="setting-row"><span>Email &amp; Notifications</span><a href="404.html" class="btn-sm">Configure</a></div><div class="setting-row"><span>Data Retention Policy</span><a href="404.html" class="btn-sm">Configure</a></div><div class="setting-row"><span>Security &amp; 2FA</span><a href="404.html" class="btn-sm">Manage</a></div><div class="setting-row"><span>Backup &amp; Restore</span><a href="404.html" class="btn-sm">Manage</a></div><div class="setting-row"><span>Danger Zone</span><a href="404.html" class="btn-sm danger">Reset System</a></div></div>
+        </div>
+
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
