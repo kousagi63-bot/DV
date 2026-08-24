@@ -74,7 +74,7 @@ body {
 .nav-logo-img {
   max-width: 140px;
   height: auto;
-  filter: brightness(0) saturate(100%) invert(68%) sepia(93%) saturate(378%) hue-rotate(41deg) brightness(94%) contrast(88%);
+  filter: brightness(0) saturate(100%);
   transition: var(--tr);
 }
 
@@ -778,11 +778,8 @@ body {
 
 /* ── Logo ── */
 .nav-logo-img {
-  filter: brightness(0) saturate(100%) invert(68%) sepia(93%) saturate(378%) hue-rotate(41deg) brightness(94%) contrast(88%);
+  filter: brightness(0) saturate(100%);
   max-width: 120px;
-}
-.nav-logo-img:hover {
-  filter: brightness(0) saturate(100%) invert(48%) sepia(61%) saturate(542%) hue-rotate(76deg) brightness(95%) contrast(86%);
 }
 
 /* ── Responsive ── */

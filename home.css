@@ -97,6 +97,30 @@
     100% { transform: translateY(0) rotate(0); }
 }
 
+/* ── Dancing Hero Title Letters ── */
+.dancing-letter {
+    display: inline-block;
+    animation: danceLetter 1.8s ease-in-out infinite;
+    will-change: transform;
+    /* Re-declare the gradient per-letter: background-clip:text on the
+       parent breaks when children have transforms, making text invisible */
+    background: linear-gradient(160deg, #ffffff 0%, #e2f6ea 40%, var(--primary-green) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes danceLetter {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25%      { transform: translateY(-12px) rotate(-4deg); }
+    50%      { transform: translateY(0) rotate(0deg); }
+    75%      { transform: translateY(-6px) rotate(4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dancing-letter { animation: none; }
+}
+
 .hero-content {
     position: relative;
     z-index: 10;
@@ -115,64 +139,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.hero-core-orb {
-    width: 120px;
-    height: 120px;
-    background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    color: var(--white);
-    box-shadow: 0 0 50px rgba(168, 230, 207, 0.6);
-    z-index: 5;
-    animation: heroOrbPulse 3s infinite ease-in-out;
-}
-
-@keyframes heroOrbPulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 50px rgba(168, 230, 207, 0.6); }
-    50% { transform: scale(1.08); box-shadow: 0 0 70px rgba(168, 230, 207, 0.8), 0 0 30px rgba(255,255,255,0.6); }
-}
-
-.hero-orb-ring {
-    position: absolute;
-    border-radius: 50%;
-    border: 2px dashed rgba(255, 255, 255, 0.6);
-    pointer-events: none;
-}
-
-.hero-ring-1 {
-    width: 200px;
-    height: 200px;
-    animation: heroRotateCw 15s linear infinite;
-    border-color: rgba(255, 255, 255, 0.8);
-}
-
-.hero-ring-2 {
-    width: 280px;
-    height: 280px;
-    animation: heroRotateCcw 25s linear infinite;
-    border-color: rgba(168, 230, 207, 0.7);
-}
-
-.hero-ring-3 {
-    width: 350px;
-    height: 350px;
-    animation: heroRotateCw 40s linear infinite;
-    border-color: rgba(255, 255, 255, 0.4);
-}
-
-@keyframes heroRotateCw {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes heroRotateCcw {
-    0% { transform: rotate(360deg); }
-    100% { transform: rotate(0deg); }
 }
 
 .hero-particle {

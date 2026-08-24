@@ -1,3 +1,24 @@
+// ── Dancing hero title (standalone — does not depend on GSAP) ──
+document.addEventListener("DOMContentLoaded", () => {
+    const title = document.querySelector('.hero-title');
+    if (!title) return;
+
+    function dance() {
+        title.innerHTML = title.innerHTML
+            .split(/<br\s*\/?>/i)
+            .map(line => [...line].map((ch, i) =>
+                ch === ' ' ? ' ' : `<span class="dancing-letter" style="animation-delay:${(i % 12) * 0.09}s">${ch}</span>`
+            ).join(''))
+            .join('<br>');
+    }
+    dance();
+
+    // Re-apply when the hero slider replaces the title text
+    new MutationObserver(() => {
+        if (!title.querySelector('.dancing-letter')) dance();
+    }).observe(title, { childList: true });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger);
@@ -247,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
             img: "url('images/wind.webp')",
             eyebrow: "CLOUD AUTOMATION SERVICES",
             title: "AUTOMATING<br>THE FUTURE OF<br>CLOUD OPERATIONS",
-            subtitle: "We deliver cutting-edge IaC and CI/CD pipelines that scale infrastructure, reduce deployment times, and eliminate manual overhead."
+            subtitle: "We deliver end-to-end DevOps automation — GitOps-driven CI/CD, Kubernetes orchestration, and Infrastructure as Code — that accelerates release cycles, scales reliably, and eliminates manual overhead."
         },
         {
             img: "url('images/smart_grid.webp')",

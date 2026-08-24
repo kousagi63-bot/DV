@@ -221,12 +221,12 @@
 
   // ── Logs ──
   const logMessages = [
-    { level: 'ok', msg: 'US-East Solar Farm: Kubernetes rolling upgrade completed successfully' },
+    { level: 'ok', msg: 'US-East Build Cluster: Kubernetes rolling upgrade completed successfully' },
     { level: 'info', msg: 'User elena@stackly.com signed in from 103.x.x.x' },
-    { level: 'warn', msg: 'US-West Battery Bank: High memory usage on node group cluster' },
+    { level: 'warn', msg: 'US-West Storage Array: High memory usage on node group cluster' },
     { level: 'ok', msg: 'Daily pipeline runs completed — 240 builds success' },
     { level: 'info', msg: 'API call: GET /v1/clusters/all — 200 OK' },
-    { level: 'ok', msg: 'EU-West Wind Farm: SSL/TLS certificate renewed' },
+    { level: 'ok', msg: 'EU-West App Cluster: SSL/TLS certificate renewed' },
     { level: 'warn', msg: 'EU-Central Grid: Disk partition space limit warning' }
   ];
 

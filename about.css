@@ -408,6 +408,113 @@ body {
     background-color: var(--about-white);
 }
 
+/* Horizontal One-By-One Member Cards (Engineering Excellence style) */
+.team-desktop-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-card {
+    background: var(--about-white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--about-shadow-sm);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--about-shadow-lg);
+}
+
+.team-media {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.team-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-media img {
+    transform: scale(1.05);
+}
+
+.team-card .timeline-number {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.team-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--about-dark);
+    margin-bottom: 6px;
+}
+
+.team-card .role {
+    color: var(--about-primary);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.team-card .bio {
+    color: #6B7280;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 15px;
+}
+
+.team-socials {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.team-socials a {
+    width: 36px;
+    height: 36px;
+    background: var(--about-bg-soft);
+    color: var(--about-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.team-socials a:hover {
+    background: var(--about-primary);
+    color: var(--about-white);
+}
+
+@media (max-width: 992px) {
+    .team-desktop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .team-desktop-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .interactive-team-container {
     position: relative;
     max-width: 1100px;
@@ -430,7 +537,7 @@ body {
     position: absolute;
     width: 140px;
     height: 140px;
-    border-radius: 50%;
+    border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
     border: 4px solid transparent;
@@ -458,7 +565,7 @@ body {
     z-index: 10;
 }
 
-/* MIDDLE: Big Circle */
+/* MIDDLE: Active Member Display (Engineering Excellence card style) */
 .team-active-display {
     width: 500px;
     position: relative;
@@ -469,12 +576,17 @@ body {
 .big-circle-wrapper {
     width: 420px;
     height: 420px;
-    border-radius: 50%;
+    border-radius: 16px;
     margin: 0;
     position: relative;
-    border: 15px solid var(--about-bg-soft);
-    box-shadow: var(--about-shadow-lg);
+    box-shadow: var(--about-shadow-md);
     overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.big-circle-wrapper:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--about-shadow-lg);
 }
 
 .big-circle-wrapper img {
@@ -517,31 +629,35 @@ body {
     background: var(--about-accent);
 }
 
-/* RIGHT: Text Content */
+/* RIGHT: Text Content (Engineering Excellence typography) */
 .active-team-info {
     width: 350px;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .active-team-info h3 {
-    font-size: 36px;
+    font-size: 22px;
+    font-weight: 700;
     color: var(--about-dark);
-    margin-bottom: 5px;
+    margin-bottom: 12px;
 }
 
 .active-team-info p {
-    color: var(--about-accent);
-    font-weight: 600;
-    font-size: 16px;
+    color: var(--about-primary);
+    font-weight: 700;
+    font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
 }
 
 .active-team-info .bio {
     color: #6B7280;
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
 }
 
@@ -922,7 +1038,7 @@ body {
     .team-mobile-card img {
         width: 120px;
         height: 120px;
-        border-radius: 50%;
+        border-radius: 16px;
         object-fit: cover;
         border: 4px solid var(--about-primary);
         margin-bottom: 20px;
