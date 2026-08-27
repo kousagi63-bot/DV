@@ -282,6 +282,12 @@
     box-shadow: var(--shadow-sm);
     transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
     position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.editorial-card .card-img-area {
+    flex-shrink: 0;
 }
 
 .editorial-card:hover {
@@ -318,8 +324,8 @@
 /* Full-card background variant (image behind entire card) */
 .editorial-card.bg-card {
     background:
-        linear-gradient(rgba(13, 27, 21, 0.6), rgba(13, 27, 21, 0.8)),
-        url('pic12.webp') center / cover no-repeat;
+        linear-gradient(rgba(13, 27, 21, 0.65), rgba(13, 27, 21, 0.85)),
+        url('pic7.webp') center / cover no-repeat;
     min-height: 420px;
 }
 
@@ -338,6 +344,10 @@
 .editorial-card.bg-card .card-meta-row {
     color: #FFFFFF;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+.editorial-card.bg-card .card-body-area > p {
+    color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .editorial-card.bg-card .card-meta-row {
@@ -394,6 +404,9 @@
 
 .card-body-area {
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .editorial-card.large .card-body-area {
@@ -444,6 +457,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    margin-top: auto;
     color: #84D4B5;
     font-weight: 700;
     font-size: 14px;
@@ -526,6 +540,13 @@
     color: #FFFFFF;
 }
 
+/* Guarantee newsletter & CTA text stays visible even if scroll animations fail to run */
+.newsletter-left > *,
+.newsletter-right-visual,
+.cta-full-width > * {
+    opacity: 1 !important;
+}
+
 .cta-organic-shape {
     position: absolute;
     border-radius: 50%;
@@ -568,8 +589,9 @@
 
 .newsletter-left > p {
     font-family: var(--font-body);
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFFFFF !important;
     line-height: 1.7;
     margin-bottom: 35px;
 }
@@ -652,8 +674,9 @@
 
 .cta-full-width > p {
     font-family: var(--font-body);
-    font-size: 17px;
-    color: rgba(255, 255, 255, 0.95);
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFFFFF !important;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
     max-width: 650px;
     margin: 0 auto 40px;

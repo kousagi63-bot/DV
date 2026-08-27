@@ -115,6 +115,12 @@
             text-align: center;
             margin-bottom: 32px;
         }
+        .brand-header .brand-logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 16px;
+            filter: brightness(0) saturate(100%);
+        }
         .brand-header h1 {
             font-size: 28px;
             font-weight: 800;
@@ -455,6 +461,7 @@
 
         <!-- Brand -->
         <div class="brand-header">
+            <img src="logo-removebg-preview.webp" alt="STACKLY" class="brand-logo" />
             <h1>Welcome Back</h1>
             <p>Sign in to your STACKLY account</p>
         </div>
@@ -489,7 +496,7 @@
                         <i class="ph ph-lock-key"></i>
                         <input type="password" id="password" placeholder="Enter your password" required />
                         <button type="button" class="toggle-pw" id="togglePw" aria-label="Toggle password visibility">
-                            <i class="ph ph-eye" id="pwIcon"></i>
+                            <i class="ph ph-eye-slash" id="pwIcon"></i>
                         </button>
                     </div>
                 </div>
@@ -567,9 +574,9 @@
 
             // ── Toggle password visibility ──
             togglePwBtn.addEventListener('click', function() {
-                const isText = passwordInput.type === 'text';
-                passwordInput.type = isText ? 'password' : 'text';
-                pwIcon.className = isText ? 'ph ph-eye' : 'ph ph-eye-slash';
+                const isVisible = passwordInput.type === 'text';
+                passwordInput.type = isVisible ? 'password' : 'text';
+                pwIcon.className = isVisible ? 'ph ph-eye-slash' : 'ph ph-eye';
             });
 
             // ── Show error helper ──

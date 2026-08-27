@@ -152,6 +152,122 @@
     box-shadow: 0 0 10px var(--white);
 }
 
+/* Hero Energy Orb */
+.hero-orb {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orb-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #b7f5db, #61B175 58%, #26513b 100%);
+    box-shadow: 0 0 40px rgba(132, 212, 181, 0.5), inset 0 0 32px rgba(255, 255, 255, 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 42px;
+    animation: orbPulse 4s ease-in-out infinite;
+}
+
+@keyframes orbPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 40px rgba(132, 212, 181, 0.5), inset 0 0 32px rgba(255, 255, 255, 0.28);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.07);
+        box-shadow: 0 0 80px rgba(132, 212, 181, 0.85), inset 0 0 40px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.orb-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.ring-1 {
+    width: 175px;
+    height: 175px;
+    border: 2px dashed rgba(132, 212, 181, 0.55);
+    animation: spinOrb 22s linear infinite;
+}
+
+.ring-2 {
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(132, 212, 181, 0.2);
+    animation: spinOrbRev 30s linear infinite;
+}
+
+.ring-1::after,
+.ring-2::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #84D4B5;
+    box-shadow: 0 0 14px #84D4B5;
+}
+
+.ring-2::after {
+    width: 6px;
+    height: 6px;
+    background: #FFA04D;
+    box-shadow: 0 0 14px #FFA04D;
+}
+
+@keyframes spinOrb {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spinOrbRev {
+    to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+.hero-satellite {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(132, 212, 181, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #84D4B5;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.4);
+    animation: satFloat 6s ease-in-out infinite;
+}
+
+.sat-1 { top: 4%; left: 6%; }
+.sat-2 { top: 76%; right: 2%; animation-delay: 1.4s; }
+.sat-3 { top: 72%; left: 2%; animation-delay: 2.8s; }
+
+@keyframes satFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(8deg); }
+}
+
 .hp-1 { top: 15%; left: 15%; animation: floatParticle1 6s infinite ease-in-out; }
 .hp-2 { top: 75%; left: 85%; animation: floatParticle2 8s infinite ease-in-out; }
 .hp-3 { top: 85%; left: 25%; animation: floatParticle1 7s infinite ease-in-out 1s; }

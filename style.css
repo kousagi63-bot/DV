@@ -323,10 +323,14 @@ ul {
 }
 
 .logo img.nav-logo-img {
-    max-width: 120px;
+    max-width: 170px;
     height: auto;
     filter: brightness(0) saturate(100%);
     transition: var(--transition);
+}
+
+header .logo img.nav-logo-img {
+    margin-left: 30px;
 }
 
 .logo i {
@@ -367,6 +371,7 @@ ul {
     color: var(--dark-text);
     border: 1px solid rgba(0, 0, 0, 0.15);
     padding: 10px 24px;
+    margin-right: 0;
 }
 
 .btn-login:hover {
